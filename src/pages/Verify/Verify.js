@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { Card, Form, Col, Button } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useNavigate } from 'react-router-dom';
+import translate from '../../i18nProvider/translate';
+import Input from '../../helpers/Input';
 
 export default function Verify() {
   const navigate = useNavigate();
@@ -79,28 +81,32 @@ export default function Verify() {
             <FontAwesomeIcon icon='fa-regular fa-file-lines' />
           </div>
           <Card.Title className='text-center'>
-            Digital document verification
+            {translate('Digital document verification')}
           </Card.Title>
           <Card.Text className='text-center'>
-            Verify a digital certefication by filling in the details bellow
+            {translate(
+              'Verify a digital certefication by filling in the details below'
+            )}
           </Card.Text>
           <Form className='mt-5'>
             <Form.Group className='mb-4'>
-              <Form.Label className='fw-semibold'>ID Iqama number</Form.Label>
-              <Form.Control
-                className='border-0 border-bottom rounded-0 px-0'
+              <Form.Label className='fw-semibold'>
+                {translate('ID Iqama number')}
+              </Form.Label>
+              <Input
+                placeholder='Enter ID Iqama number'
                 type='text'
                 inputMode='numeric'
-                placeholder='Enter ID Iqama number'
                 value={iDIqamaNumber}
                 maxLength='10'
                 onChange={(e) => handelIDIqamaNumber(e)}
               />
             </Form.Group>
-
             <Form.Group className='mb-4'>
-              <Form.Label className='fw-semibold'>Reference number</Form.Label>
-              <Form.Control
+              <Form.Label className='fw-semibold'>
+                {translate('Reference number')}
+              </Form.Label>
+              <Input
                 className='border-0 border-bottom rounded-0 px-0'
                 type='text'
                 placeholder='Enter reference number'
@@ -116,7 +122,7 @@ export default function Verify() {
               disabled={!formValid}
               onClick={() => handleSubmit()}
             >
-              Verify
+              {translate('Verify')}
             </Button>
           </Form>
         </Card.Body>
