@@ -1,24 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import { RouterProvider } from 'react-router-dom';
+import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { library } from '@fortawesome/fontawesome-svg-core';
+
+import { faFileLines } from '@fortawesome/free-regular-svg-icons';
+import { faGlobe } from '@fortawesome/free-solid-svg-icons';
+import { appRoutes } from './AppRoutes';
+
+library.add(faFileLines, faGlobe);
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header />
+      <div
+        id='content-wrapper'
+        className='align-items-center d-flex flex-fill justify-content-center'
+      >
+        <RouterProvider router={appRoutes} />
+      </div>
+      <Footer />
+    </>
   );
 }
 
