@@ -1,0 +1,12 @@
+html, body {
+  height: 100%;
+}
+body {
+  background: linear-gradient(180deg, #4d038e 50%, #fff 50%);
+}
+.icon-rounded-wrapper {
+  margin-block-start: -43px;
+  aspect-ratio: 1;
+  text-align: center;
+  width: 50px;
+}
